@@ -1,6 +1,42 @@
+<!--
 <div>
   Studant: {{ studant.name }}
-  <div [hidden]="!studant.isJedi">
+  <div *ngIf="studant.isJedi">
     Jedi Temple: {{ studant.temple }}
   </div>
+</div>-->
+<!--
+<div>
+  Studant: {{ studant.name }}
+  <div *ngIf="studant.isJedi">
+    Jedi Temple: {{ studant.temple }}
+  </div>-->
+<!--
+<div>
+  Studant: {{ studant?.name }}
+  <div *ngIf="studant?.isJedi">
+    Jedi Temple: {{ studant?.temple }}
+  </div>
+</div>-->
+<!--
+<div *ngIf="studant">
+  Studant: {{ studant?.name }}
+  <div *ngIf="studant?.isJedi">
+    Jedi Temple: {{ studant?.temple }}
+  </div>
 </div>
+<p *ngIf="!studant">
+  Sem dados para exibir
+</p>
+-->
+
+<div *ngIf="studant">
+  Studant: <a href="#" (click)="clicked()"> {{ studant?.name }}</a>
+  <div *ngIf="studant?.isJedi">
+    Jedi Temple: {{ studant?.temple }} <button (click)="description.focus()">Focus!</button><br />
+    <textarea #description></textarea>
+  </div>
+</div>
+<p *ngIf="!studant">
+  Sem dados para exibir
+</p>

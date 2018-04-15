@@ -15,4 +15,8 @@ export class StudantComponent implements OnInit {
   ngOnInit() {
   }
 
+  clicked(){
+    console.log(`Student: ${this.studant.name}`)
+  }
+
 }
